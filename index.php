@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +78,7 @@
         <div class="col-md-6 skills-bar">
          <div  class="aaddsong">
            <!-- <button type="button"style="background-color:#696969;color:white;padding-bottom: 5px;" > <a href="file:///F:/DeltaX_project/sec.html"style="background-color:#696969;color:white;padding-bottom: 5px;text-decoration: none;">+ Add Song</a></button> -->
-           <a href="http://localhost/All_project/DeltaX_project/sec.html"style="background-color:#696969;color:white;padding: 5px;text-decoration:none;">+ Add Song</a>
+           <a href="http://localhost/DeltaX_project/sec.html"style="background-color:#696969;color:white;padding: 5px;text-decoration:none;">+ Add Song</a>
          </div>
         </div>
 
@@ -90,8 +92,7 @@
 
 
 
-    <table style=" border: 1px solid black;
-    border-collapse: collapse;">
+    <table style="border: 1px solid black;border-collapse: collapse;">
 		
 		<tr style="border:1px solid black;border-collapse: collapse;text-align: center;">
 			<th>Artwork</th>
@@ -101,7 +102,7 @@
             <th>Rate</th>
 		</tr>
 		<tr>
-			<td>img</td>
+			<td><img src="http://localhost/DeltaX_project/all_img/lewish.jfif" alt="" style="height:60px;width:35;"></td>
 			<td>Someone You Loved</td>
 			<td>July 21,2019</td>
             <td>Lewis Capalid</td>
@@ -110,13 +111,13 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
             </td>
             
 		</tr>
 
         <tr>
-			<td>img</td>
+			<td><img src="http://localhost/DeltaX_project/all_img/lewish.jfif" alt="" style="height:60px;width:35;"></td>
 			<td>Chal uth bandiye</td>
 			<td>Jun 12,2020</td>
             <td>Lewis Capalid</td>
@@ -131,7 +132,7 @@
 		</tr>
 
         <tr>
-			<td>img</td>
+			<td><img src="http://localhost/DeltaX_project/all_img/deep.jfif" alt="" style="height:60px;width:35;"></td>
 			<td>Love me like you do</td>
 			<td>Aug 22,2021</td>
             <td>Deep</td>
@@ -140,12 +141,12 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
+                <span class="fa fa-star checked"></span>
             </td>
         </tr>
 
-        <tr>
-			<td>img</td>
+      <tr>
+			<td><img src="http://localhost/DeltaX_project/all_img/kk.jfif" alt="" style="height:60px;width:35;"></td>
 			<td>Sanam teri kasam</td>
 			<td>NOV 29,2019</td>
             <td>KR</td>
@@ -154,7 +155,36 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
+                <span class="fa fa-star checked"></span>
+            </td>
+        </tr>
+
+       <tr>
+        <td><img src="http://localhost/DeltaX_project/all_img/kk.jfif" alt="" style="height:60px;width:35;"></td>
+			<td>Enna sona</td>
+			<td>Sep 05,2020</td>
+            <td>KR</td>
+            <td>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+            </td>
+        </tr>
+        
+
+        <tr>
+        <td><img src="http://localhost/DeltaX_project/all_img/ar.jfif" alt="" style="height:60px;width:35;"></td>
+			<td>Desh mere</td>
+			<td>Dec 29,2021</td>
+            <td>Arijit singh</td>
+            <td>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
             </td>
         </tr>
 
@@ -180,14 +210,27 @@
                <th>Songs</th>
               
            </tr>
-           <tr>
-               <td>Lewis Capalid</td>
-               <td>Jan 12,1995</td>
-               <td>Someone You Loved, Chal uth bandiye</td>
-              
-               
-           </tr>
-           <tr>
+
+           <?php
+            $conn = mysqli_connect("localhost", "root", "root", "deltax");
+            // Check connection
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+            $sql = "SELECT artist_name, artist_dob, arist_bio FROM artists_table LIMIT 10";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+            echo "<tr><td>" . $row["artist_name"]. "</td><td>" . $row["artist_dob"] . "</td><td>"
+            . $row["arist_bio"]. "</td></tr>";
+            }
+            echo "</table>";
+            } else { echo "0 results"; }
+            $conn->close();
+            ?>
+  
+           <!-- <tr>
                <td>Deep</td>
                <td>Aug 10,1989</td>
                <td>Love me like you do,kesari rang,tere mere</td>
@@ -198,7 +241,7 @@
                <td>KR</td>
                <td>Dec 20,1992</td>
                <td>Sanam teri kasam, enna sona, Humsafar, aaj se tere</td>
-           </tr>
+           </tr> -->
    
     </table>
     
