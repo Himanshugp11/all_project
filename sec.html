@@ -63,28 +63,28 @@
   </div>
 
   <div class="addsongform">
-  <form action="" method="get" class="form-example">
+  <form action="song.php" method="post" class="form-example">
     <div class="form-example">
-      <label for="name">Song name: </label>
-      <input type="text" name="name" id="name" required style="margin-left: 80px;" size="35">
+      <label for="sname">Song name: </label>
+      <input type="text" name="sname" id="sname" required style="margin-left: 80px;" size="35" value="">
     </div>
     <br>
 
     <div class="form-example">
       <label for="datereleased">Date Released: </label>
-       <input type="datereleased" name="datereleased" id="datereleased" required style="margin-left: 60px;" size="35">
+       <input type="datereleased" name="datereleased" id="datereleased" required style="margin-left: 60px;" size="35" value="">
     </div>
     <br>
     
     <div class="form-example">
-        <label for="Artwork" >Artwork(img):</label>
-       <input type="file" id="img" name="img" accept="image/*"label="Upload img" style="margin-left: 150px;margin-top: -34px;">
+        <label for="imgart" >Artwork(img):</label>
+       <input type="file" id="imgart" name="imgart" accept="image/*"label="Upload img" style="margin-left: 150px;margin-top: -34px;" value="">
     </div>
     <br>
 
     <div class="form-example">
-        <label for="Artists" >Artists:</label>
-        <select name="Artistname"style="margin-left: 110px;">
+        <label for="artistsname"  >Artists:</label>
+        <select name="artistsname"style="margin-left: 110px;"id="artistsname" >
             <option  value="Lewis Capalid">Lewis Capalid</option>
             <option value="Deep">Deep</option>
             <option value="KR">KR</option>
@@ -94,7 +94,7 @@
 
     <div class="form-example" >
         <button type="reset" class="btn btn-outline-secondary"style="width: 80px;margin-left:100px;margin-top:90px;">Cencel</button>
-      <button class="btn btn-outline-primary"style="width: 80px;margin-left:60px;margin-top:90px;"type="submit">Save</button>
+      <button class="btn btn-outline-primary"style="width: 80px;margin-left:60px;margin-top:90px;"type="submit" value="save">Save</button>
     </div>
   </form>
   </div>
@@ -115,28 +115,28 @@
      
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <form action="" method="get" class="form-example-artist">
+                            <form action="artists.php" method="post" class="form-example-artist">
                                 <div class="form-example-artist">
-                                  <label for="name">Artist name: </label>
-                                  <input type="text" name="name" id="name" required style="margin-left: 45px;" size="20">
+                                  <label for="arname">Artist name: </label>
+                                  <input type="text" name="arname" id="arname"  required style="margin-left: 45px;" size="20" value="">
                                 </div>
                                 <br>
                             
                                 <div class="form-example-artist">
                                   <label for="dateofbirth">Date of Birth: </label>
-                                   <input type="date" name="dateofbirth" id="dateofbirth" required style="margin-left: 38px;" size="20">
+                                   <input type="date" name="dateofbirth" id="dateofbirth" required style="margin-left: 38px;" size="20" value="">
                                 </div>
                                 <br>
                                 
                                 <div class="form-example">
-                                    <label for="Bio" >Bio:</label>
-                                    <input type="text" name="Bio" id="Bio" required style="margin-left: 105px;" size="25">
+                                    <label for="bio" >Bio:</label>
+                                    <input type="text" name="bio" id="bio" required style="margin-left: 105px;" size="25" value="">
                                   </div>
                                 <br>
 
                                 
                             <button type="reset" class="btn btn-outline-secondary"style="width: 80px;margin-left:100px;">Cencel</button>
-                            <button class="btn btn-outline-primary"style="width: 80px;margin-left:50px;"type="submit">Done</button>
+                            <button class="btn btn-outline-primary"style="width: 80px;margin-left:50px;"type="submit" value="save">Done</button>
                             </form>
                         </div>
                      </div>
