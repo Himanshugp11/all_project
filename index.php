@@ -78,7 +78,7 @@
         <div class="col-md-6 skills-bar">
          <div  class="aaddsong">
            <!-- <button type="button"style="background-color:#696969;color:white;padding-bottom: 5px;" > <a href="file:///F:/DeltaX_project/sec.html"style="background-color:#696969;color:white;padding-bottom: 5px;text-decoration: none;">+ Add Song</a></button> -->
-           <a href="http://localhost/DeltaX_project/sec.html"style="background-color:#696969;color:white;padding: 5px;text-decoration:none;">+ Add Song</a>
+           <a href="http://localhost/DeltaX_project/sec.php"style="background-color:#696969;color:white;padding: 5px;text-decoration:none;">+ Add Song</a>
          </div>
         </div>
 

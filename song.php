@@ -15,8 +15,8 @@
 		$stmt = $conn->prepare("insert into song(song_name, date_of_released, artwork_img, artists_search) values(?, ?, ?, ?)");
 		$stmt->bind_param("ssss", $sname, $datereleased, $imgart, $artistsname);
 		$execval = $stmt->execute();
-		echo $execval;
-		echo "Registration successfully...";
+		// echo $execval;
+		// echo "Registration successfully...";
 		$stmt->close();
 		$conn->close();
 	}

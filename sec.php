@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">DeltaX</a>
+          <a class="navbar-brand" href="http://localhost/DeltaX_project/index.php">DeltaX</a>
           <form role="search" id="searchbar">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
           </form>
@@ -28,10 +28,13 @@
           <div class="collapse navbar-collapse" id="navbarsExampleXxl">
             <ul class="navbar-nav me-auto mb-2 mb-xl-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">User</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Name</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Email</a>
               </li>
               
               
@@ -85,10 +88,30 @@
     <div class="form-example">
         <label for="artistsname"  >Artists:</label>
         <select name="artistsname"style="margin-left: 110px;"id="artistsname" >
-            <option  value="Lewis Capalid">Lewis Capalid</option>
+           
+        <?php
+            $conn = mysqli_connect("localhost", "root", "root", "deltax");
+            // Check connection
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+            $sql = "SELECT  DISTINCT artist_name FROM artists_table";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+            echo "<option>" . $row["artist_name"]. "</option>";
+            }
+            echo "</table>";
+            } else { echo "0 results"; }
+            $conn->close();
+            ?>
+  
+        
+        <!-- <option  value="Lewis Capalid">Lewis Capalid</option>
             <option value="Deep">Deep</option>
             <option value="KR">KR</option>
-            <option value="Arijit singh">Arijit singh</option>
+            <option value="Arijit singh">Arijit singh</option> -->
            </select>
         </div>
     <br>
@@ -146,9 +169,8 @@
          
         
 
- 
-  
 
+            
 
 
 
